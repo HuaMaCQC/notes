@@ -12,7 +12,7 @@
  前往位置
  1. $cd .. 回上一層
 
-### **$ ifconfig**
+### **$ ipconfig**
 查看網路
 
 ### **$ netstat**
