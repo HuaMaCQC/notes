@@ -26,7 +26,7 @@ $ npm test -- --coverage --collectCoverageFrom=src/js/login/* src/js/login
 $ npm test --watch
 ```
 
-# jest api
+# mock
 
 ## mock
 模擬 import 的檔案
@@ -55,9 +55,45 @@ it('api' , ()=>{
     expect(apigetuserMock).toHaveBeenCalledTimes(1);
 })
 ```
+## requireActual
+ 繞開模擬
+
+```javascript
+import {
+  forward,
+  classNames,
+} from 'Utils';
+
+// mock Utils 這隻檔案
+jest.mock('Utils');
+
+// 獲取原本的Utils
+const utils = require.requireActual('Utils');
+
+// 將原本的Utils.classNames 放回 classNames
+// 我要mock Utils這隻檔案 但 classNames除外
+classNames.mockImplementation(utils.classNames);
+```
+## genMockFromModule
+模擬樣板
+``` javascript
+const mockAxios = jest.genMockFromModule('axios');
+
+mockAxios.create = jest.fn(() => mockAxios);
+
+export default mockAxios;
+```
+
+## jest.fn()
+回傳一個 測試fn
+ * 預設return undefined
+ * 回傳 true 的寫法如下
+ ```javascript
+ jest.fn(() => true);
+ ``` 
 
 # expect 檢查
-## toHaveBeenCalledTimes
+##  toHaveBeenCalledTimes
  fn 執行次數
 
 ## toHaveBeenCalledWith
@@ -71,7 +107,30 @@ toHaveTextContent('/^Text Content$/') //  全部匹配
 ```
 
 ## toHaveLength
-**`npm 更新資訊`**
+  陣列長度
+
+# 重製
+
+##  cleanup();  (testing-library)
+  清除渲染(render)
+## jest.clearAllMocks();
+  清除模擬  
+
+# 執行
+
+## beforeEach
+  每個測試前
+
+## afterEach
+ 每個測試後
+
+## beforeAll
+  全部執行前
+## afterAll
+  全部執行後
+
+
+# **`npm 更新資訊`**
 
 2019/07/09
 * jest-dom已經轉移到@ testing-library / jest-dom。請卸載jest-dom並安裝@ testing-library / jest-dom，或使用舊版本的jest-dom。
