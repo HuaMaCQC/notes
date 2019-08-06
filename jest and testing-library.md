@@ -145,3 +145,5 @@ toHaveTextContent('/^Text Content$/') //  全部匹配
 
 2019/07/09
 * jest-dom已經轉移到@ testing-library / jest-dom。請卸載jest-dom並安裝@ testing-library / jest-dom，或使用舊版本的jest-dom。
+
+test
