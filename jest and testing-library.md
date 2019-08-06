@@ -55,6 +55,17 @@ it('api' , ()=>{
     expect(apigetuserMock).toHaveBeenCalledTimes(1);
 })
 ```
+模擬 非截斷fn
+```javascript
+  import { Cookies } from '../../utils';
+
+  it('mock cookies' , () => {
+    Cookies.get = jest.fn()
+      .mockImplementation(() => true);
+  });
+
+  // 使用Cookies.get(''); 就會回傳 true
+```
 ## requireActual
  繞開模擬
 
