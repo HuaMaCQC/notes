@@ -14,7 +14,7 @@ $ git add 檔案名稱
 ```
 $ git commit -m "版本說明"
 ```
-
+ * git commit --amend 修改上一個commit
 ### **push**
 ```
 $ git push
@@ -24,4 +24,19 @@ $ git push
 ```
 $ git pull
 ```
+
+### **上傳目前的分支 到線上123-分支**
+```
+$ git push origin HEAD:123-
+``` 
+* -f 強制覆蓋
+
+### **放弃本地的修改，直接覆盖**
+```
+$ git reset --hard
+$ git pull origin
+```
+ * 其他衝突解決方法 [教學網站](https://blog.csdn.net/liuchunming033/article/details/45368237)
+
+
 
