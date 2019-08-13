@@ -57,7 +57,7 @@ it('api' , ()=>{
 ```
 模擬 非截斷fn
 ```javascript
-  import { Cookies } from '../../utils';
+  import { Cookies } from '../../cookiesJs';
 
   it('mock cookies' , () => {
     Cookies.get = jest.fn()
@@ -73,13 +73,13 @@ it('api' , ()=>{
 import {
   forward,
   classNames,
-} from 'Utils';
+} from 'JS';
 
-// mock Utils 這隻檔案
-jest.mock('Utils');
+// mock JS 這隻檔案
+jest.mock('JS');
 
 // 獲取原本的Utils
-const utils = require.requireActual('Utils');
+const utils = require.requireActual('JS');
 
 // 將原本的Utils.classNames 放回 classNames
 // 我要mock Utils這隻檔案 但 classNames除外

@@ -23,11 +23,23 @@ $ git push
 ### **pull**
 ```
 $ git pull
+``` 
+* 衝突解決方法 1 將變更先儲存起來
+```
+$ git stash
+$ git pull origin master
+$ git stash pop
 ```
 
-### **上傳目前的分支 到線上123-分支**
+* 衝突解決方法 2 刪除全部變更
 ```
-$ git push origin HEAD:123-
+$ git reset --hard
+$ git pull origin master
+```
+
+### **上傳目前的分支 到線上123分支**
+```
+$ git push origin HEAD:123
 ``` 
 * -f 強制覆蓋
 
