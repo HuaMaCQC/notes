@@ -78,5 +78,12 @@ $ docker-compose down
 ```
 * --volumes  刪除Redis容器使用的數據卷
 
+### **複製**
+
+複製 CONTAINER_ID這個容器的/etc/nginx 到當前目錄
+```
+$ docker cp CONTAINER_ID:/etc/nginx
+```
+
 ## **地雷區**
 1. 如果裝了docker windows版 會讓 vm虛擬機掛掉。 主要原因是Microsoft Hyper-V 無法與 vm相容 如果不小心裝了 docker windows可以到 cmd執行 `$ dism.exe /Online /Disable-Feature:Microsoft-Hyper-V` 關閉他。
