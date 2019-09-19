@@ -66,6 +66,11 @@ it('api' , ()=>{
 
   // 使用Cookies.get(''); 就會回傳 true
 ```
+## 模擬時間
+```javascript
+    Date.now = jest.fn(() => 1487076708000) //14.02.2017
+```
+
 ## requireActual
  繞開模擬
 

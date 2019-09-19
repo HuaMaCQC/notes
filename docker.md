@@ -47,7 +47,7 @@ $ docker rmi 名稱(IMAGE ID)
 
 ### **將專案Dockerfile build成images**
 ```
-$ docker build images名稱 .
+$ docker build -t images名稱 .
 ``` 
 * `-t` 標記
 *  `--no-cache` 避免在 Build Docker image 時被 cache 住

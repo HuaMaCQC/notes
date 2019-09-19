@@ -44,6 +44,17 @@ $ git push origin HEAD:123 -f
 ```
 $ git pull
 ```
+* 衝突1 顯示合併將會覆蓋擬修改的檔案
+```
+# 將修改檔案暫存起來
+$ git stash
+
+# 查看 
+$ git stash list
+
+# 將檔案合併回來
+$ git stash pop stash@{0}
+```
 
 ## **reset 前往**
 
