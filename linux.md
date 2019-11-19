@@ -36,6 +36,7 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout client.key -out clie
 * `-out` 新的證書要放在哪
 
 
+
 ## **$ netstat**
 觀察網路狀況
 
@@ -46,6 +47,13 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout client.key -out clie
 * :q! 離開不保存
 * :q 離開
 * :w [filename] 另存新檔
+
+
+## **ip addr show**
+查看網路卡 
+
+## **reboot**
+重新開機
 
 # 待測試指令
 
@@ -59,3 +67,26 @@ openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout client.key -out clie
 
 ## **/etc**
 系統的設定
+
+
+---
+
+# **網路**
+
+### 啟動網路
+
+```cmd
+  # 暫停
+  $ service network stop
+  # 啟動
+  $ service network start
+  # 重啟
+  $ service network restart
+```
+
+### 查看網路
+
+```
+$ ip addr show
+$ netstat
+```

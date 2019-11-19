@@ -37,7 +37,7 @@ jest.mock( fs , path )
 * path 代替的檔案 (可選) 格式 () => require('path')
 
 ## mockImplementation
-模擬fn
+* **模擬fn**
 ```javascript
 import { apigetuser } from '../api'
 
@@ -55,7 +55,7 @@ it('api' , ()=>{
     expect(apigetuserMock).toHaveBeenCalledTimes(1);
 })
 ```
-模擬 非截斷fn
+* **模擬 非截斷fn**
 ```javascript
   import { Cookies } from '../../cookiesJs';
 
@@ -72,7 +72,7 @@ it('api' , ()=>{
 ```
 
 ## requireActual
- 繞開模擬
+* **繞開模擬**
 
 ```javascript
 import {
@@ -91,7 +91,7 @@ const utils = require.requireActual('JS');
 classNames.mockImplementation(utils.classNames);
 ```
 ## genMockFromModule
-模擬樣板
+* **模擬樣板**
 ``` javascript
 const mockAxios = jest.genMockFromModule('axios');
 
@@ -101,7 +101,7 @@ export default mockAxios;
 ```
 
 ## jest.fn()
-回傳一個 測試fn
+**回傳一個 測試fn**
  * 預設return undefined
  * 回傳 true 的寫法如下
  ```javascript
