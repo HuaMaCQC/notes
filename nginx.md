@@ -43,6 +43,12 @@ ssl_certificate /etc/nginx/certs/client.crt;
 ssl_certificate_key /etc/nginx/certs/client.key;
 ```
 
+nginx 
 
+nginx -s stop
+
+nginx -s reload
+
+nginx -s quit
 
 
