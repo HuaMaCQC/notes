@@ -17,10 +17,10 @@ $ npm install --save styled-jsx
  options: {
    customize: require.resolve(
      'babel-preset-react-app/webpack-overrides'
-
+   ),
    plugins: [
      [
-       require.r('babel-plugin-named-asset-import'),
+       require.resolve('babel-plugin-named-asset-import'),
        {
          loaderMap: {
            svg: {
