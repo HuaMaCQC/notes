@@ -116,10 +116,15 @@ git reset c8763
 ```bash
 $ git reflog
 
-or
-
 $ git log -g
+
+git log --graph --decorate --oneline --simplify-by-decoration --all
 ```
+
+**--decorate** : 標記會讓git log顯示每個commit的引用(如:分支、tag等)
+**--oneline** : 一行顯示
+**--simplify-by-decoration** : 只顯示被branch或tag引用的commit
+**--all**  : 表示顯示所有的branch，這裡也可以選擇，比如我指向顯示分支ABC的關係，則將--all替換為branchA branchB branchC
 
 ## 上傳至gitHub
 
