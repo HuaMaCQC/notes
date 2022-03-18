@@ -1,4 +1,4 @@
-## script 基本配置
+## 基本配置
 ```html
 <template>
   <div class="index">
@@ -34,6 +34,11 @@ export default {
       console.log(req);
     }
 
+    // Datas更新時觸發
+    watch(Datas, (nv,ov)=>{
+      console.log('Datas 更新了')
+    })
+
     // 匯出到html
     return {
       Datas,
@@ -41,6 +46,31 @@ export default {
       title,
       myfun,
     };
+  },
+}
+
+```
+
+# vue-router
+
+## 取得 router, route
+
+```javascript
+import { useRouter, useRoute } from 'vue-router'
+
+export default {
+  setup() {
+    const router = useRouter()
+    const route = useRoute()
+
+    function pushWithQuery(query) {
+      router.push({
+        name: 'search',
+        query: {
+          ...route.query,
+        },
+      })
+    }
   },
 }
 
